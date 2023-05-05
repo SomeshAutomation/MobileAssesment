@@ -10,7 +10,7 @@ The framework follows three layer structure:
 * PageObject files: for storing locators and their action methods
 
 ------------------------------------------------------------
-**Prerequisites**
+## Prerequisites
 
 * Java 11 and Maven Installed, path set in environmental variables
 * Android sdk configured and Path set in environmental variables
@@ -19,17 +19,17 @@ The framework follows three layer structure:
 (Please refer https://docs.qameta.io/allure/#_installing_a_commandline)
 
 ------------------------------------------------------------
-**Running Project**
+## Running Project
 
 Once the Appium server is up and running
 And the test device details, appium servers details are update in config.properties file
 
 Run below command
-
+```
 mvn clean test -Dcucumber.filter.tags="@Navigation"
-
+```
 ------------------------------------------------------------
-**Reports**
+## Reports
 
 **Cucumber Report**
 One can find cucumber Reports by opening target/results/cucumber-reports.html
@@ -39,15 +39,19 @@ One can find cucumber Reports by opening target/results/cucumber-reports.html
 
 **Allure Report**
 * in project path, please navigate to target folder 
-- cd target/
+```
+ cd target/
+```
 * then Run below command
-- allure serve
+```
+allure serve
+```
 
 ![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport1.png)
 ![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport2.png)
 ------------------------------------------------------------
 
-**Work in Progress**
+## Work in Progress
 * Implementing Parallel execution 
 * Adding Allure report history
 * Automating Allure report generation
