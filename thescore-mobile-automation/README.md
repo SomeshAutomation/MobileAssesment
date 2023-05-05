@@ -38,16 +38,16 @@ One can find cucumber Reports by opening target/results/cucumber-reports.html
 
 
 **Allure Report**
-in project path, please navigate to target folder 
-cd target/
-then Run
-allure serve
+* in project path, please navigate to target folder 
+- cd target/
+* then Run below command
+- allure serve
 
 ![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport1.png)
 ![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport2.png)
 ------------------------------------------------------------
 
-** Work in Progress**
+**Work in Progress**
 * Implementing Parallel execution 
 * Adding Allure report history
 * Automating Allure report generation
