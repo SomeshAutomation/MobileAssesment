@@ -25,7 +25,5 @@ public class DriverManager {
         AppiumDriver driver = null;
         }
 
-    }
-
 }
 

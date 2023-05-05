@@ -62,7 +62,7 @@ public class Hooks {
         log.info("taking screen shot.");
         byte[] screenShot = ((TakesScreenshot) appiumDriver).getScreenshotAs(OutputType.BYTES);
         Allure.addAttachment(
-                "Screenshot for test failure for scenario ",
+                "Screenshot for scenario ",
                 new ByteArrayInputStream(screenShot));
 
     }
