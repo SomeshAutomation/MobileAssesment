@@ -34,22 +34,25 @@ mvn clean test -Dcucumber.filter.tags="@Navigation"
 **Cucumber Report**
 One can find cucumber Reports by opening target/results/cucumber-reports.html
 
-[image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/CucumberReport.png)
+![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/CucumberReport.png)
 
 
 **Allure Report**
-in project path, please navigate to target folder 
-cd target/
-then Run
-allure serve
+* in project path, please navigate to target folder 
+- cd target/
+* then Run below command
+- allure serve
 
-[image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport1.png)
-[image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport2.png)
+![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport1.png)
+![image](https://github.com/SomeshAutomation/MobileAssesment/blob/master/AllureReport2.png)
 ------------------------------------------------------------
 
+**Work in Progress**
+* Implementing Parallel execution 
+* Adding Allure report history
+* Automating Allure report generation
 
-
-
+------------------------------------------------------------
 
 
 
