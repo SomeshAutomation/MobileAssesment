@@ -10,6 +10,17 @@ The framework follows three layer structure:
 * PageObject files: for storing locators and their action methods
 
 ------------------------------------------------------------
+## Libraries and Framework Used
+
+* [Maven](https://maven.apache.org/) - Dependency Management and life cycle
+* [Java 11] - Programming Language
+* [Cucumber](https://cucumber.io/) - Framework ( Increase readability)
+* [Appium](http://appium.io/) -  Native App automation framework
+* [Allure Reports](https://qameta.io/allure-report/) - Reporting
+* [Lombok](https://projectlombok.org/) - Provides Annotation to save space and time , also logging 
+* [SpotLess] - Code Reformatting 
+
+------------------------------------------------------------
 ## Prerequisites
 
 * Java 11 and Maven Installed, path set in environmental variables
