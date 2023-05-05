@@ -33,6 +33,28 @@
                         <target>11</target>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>com.diffplug.spotless</groupId>
+                    <artifactId>spotless-maven-plugin</artifactId>
+                    <version>${spotless-maven-plugin}</version>
+                    <configuration>
+                        <java>
+                            <includes>
+                                <include>src/main/java/**/*.java</include> <!-- Check application code -->
+                                <include>src/test/java/**/*.java</include> <!-- Check application tests code -->
+                            </includes>
+                            <googleJavaFormat>
+                                <version>1.16.0</version>
+                                <style>GOOGLE</style>
+                                <reflowLongStrings>true</reflowLongStrings>
+                                <groupArtifact>com.google.googlejavaformat:google-java-format</groupArtifact>
+                            </googleJavaFormat>
+                            <importOrder />
+                            <removeUnusedImports/>
+                        </java>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -69,26 +91,7 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>com.diffplug.spotless</groupId>
-                    <artifactId>spotless-maven-plugin</artifactId>
-                    <version>${spotless-maven-plugin}</version>
-                    <configuration>
-                        <java>
-                            <includes>
-                                <include>src/test/java/**/*.java</include>
-                            </includes>
-                            <googleJavaFormat>
-                                <version>1.16.0</version>
-                                <style>GOOGLE</style>
-                                <reflowLongStrings>true</reflowLongStrings>
-                                <groupArtifact>com.google.googlejavaformat:google-java-format</groupArtifact>
-                            </googleJavaFormat>
-                            <importOrder />
-                            <removeUnusedImports/>
-                        </java>
-                    </configuration>
-                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
