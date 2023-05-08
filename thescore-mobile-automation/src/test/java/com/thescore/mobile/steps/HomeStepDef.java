@@ -9,7 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
-import org.testng.Assert;
+import org.junit.Assert;
 
 @Slf4j
 public class HomeStepDef {
@@ -57,14 +57,15 @@ public class HomeStepDef {
   public void userIsOnScreenOf(String title, String type) {
     if (type.equals(TEAM)) {
       Assert.assertEquals(
-          teamPageObject.getTeamPageTitle(),
+          "User navigate to correct Team screen with title:",
           title,
-          "User navigate to correct Team screen with title:");
+          teamPageObject.getTeamPageTitle());
+
     } else if (type.equals(LEAGUE)) {
       Assert.assertEquals(
-          leaguePageObject.getPageTitleText(),
+          " User navigates to correct League screen with title:",
           title,
-          " User navigates to correct League screen with title:");
+          leaguePageObject.getPageTitleText());
     } else {
       Assert.fail("Incorrect Type");
     }
@@ -84,9 +85,9 @@ public class HomeStepDef {
   @Then("user {string} sub-tab for {string} type is selected")
   public void userSubTabForTypeIsSelected(String subTab, String type) {
     if (type.equals(TEAM)) {
-      Assert.assertTrue(teamPageObject.isSubTabSelected(subTab), "user is on correct sub tab");
+      Assert.assertTrue("user is on correct sub tab", teamPageObject.isSubTabSelected(subTab));
     } else if (type.equals(LEAGUE)) {
-      Assert.assertTrue(leaguePageObject.isSubTabSelected(subTab), "user is on correct sub tab");
+      Assert.assertTrue("user is on correct sub tab", leaguePageObject.isSubTabSelected(subTab));
     } else {
       Assert.fail("Incorrect Type");
     }
@@ -94,6 +95,6 @@ public class HomeStepDef {
 
   @Then("Home screen is displayed")
   public void homeScreenIsDisplayed() {
-    Assert.assertTrue(homePageObject.isSearchBarDisplayed(), " user is on Home Screen");
+    Assert.assertTrue(" user is on Home Screen", homePageObject.isSearchBarDisplayed());
   }
 }

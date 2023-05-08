@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
       "json:target/results/cucumber.json",
       "junit:target/results/cucumber.xml",
       "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-      "timeline:results/timeline"
+      "timeline:target/results/timeline"
     },
     glue = "com/thescore/mobile",
     monochrome = true,
