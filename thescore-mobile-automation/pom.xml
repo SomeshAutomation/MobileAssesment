@@ -60,6 +60,17 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.22.2</version>
                     <configuration>
+                        <systemPropertyVariables>
+                            <java.awt.headless>true</java.awt.headless>
+                            <allure.results.directory>target/allure-results</allure.results.directory>
+                        </systemPropertyVariables>
+                        <parallel>methods</parallel>
+                        <threadCount>1</threadCount>
+                        <perCoreThreadCount>true</perCoreThreadCount>
+                        <argLine>
+                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                            -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
+                        </argLine>
                         <includes>
                             <include>*.java</include>
                         </includes>
@@ -72,26 +83,6 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>3.6.0</version>
-                    <executions>
-                        <execution>
-                            <!-- Run our version calculation script -->
-                            <id>Renaming build artifacts</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>exec</goal>
-                            </goals>
-                            <configuration>
-                                <executable>cmd</executable>
-                                <commandlineArgs>allure generate allure-results -o allure-reports --clean</commandlineArgs>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
             </plugins>
         </pluginManagement>
     </build>
@@ -141,12 +132,6 @@
             <groupId>io.cucumber</groupId>
             <artifactId>gherkin</artifactId>
             <version>25.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.7.1</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.appium</groupId>
