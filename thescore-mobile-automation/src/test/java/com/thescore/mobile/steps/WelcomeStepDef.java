@@ -32,6 +32,9 @@ public class WelcomeStepDef {
         welcomePageObject.clickPrimaryButton();
       }
       if (!teamName.equals(null) || !teamName.isEmpty()) {
+        if (!welcomePageObject.isTeamFavIconDisplayed(teamName)) {
+          welcomePageObject.searchTeams(teamName);
+        }
         welcomePageObject.selectFavTeamOrLeague(teamName);
         welcomePageObject.clickPrimaryButton();
       }
