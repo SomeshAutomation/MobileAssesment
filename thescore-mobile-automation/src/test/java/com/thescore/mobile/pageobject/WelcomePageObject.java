@@ -63,4 +63,13 @@ public class WelcomePageObject extends CommonFunction {
     clickElement(
         waitForVisibilityBy(By.xpath(String.format(FAV_TEAM_LEAGUE_FOLLOW_ICON_XPATH, name))));
   }
+
+  public boolean isTeamFavIconDisplayed(String name) {
+    return isElementDisplayed(
+        waitForVisibilityBy(By.xpath(String.format(FAV_TEAM_LEAGUE_FOLLOW_ICON_XPATH, name))));
+  }
+
+  public void searchTeams(String teamName) {
+    enterText(searchBar, teamName);
+  }
 }

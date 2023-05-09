@@ -2,7 +2,7 @@
 Feature: League, Team , Player and sub tab Navigation test
 
   Background:
-    Given User completes onboarding screen by following "NHL Hockey" League and "Toronto Maple Leafs" Team
+    Given User completes onboarding screen by following "NHL Hockey" League and "Toronto Raptors" Team
     And User is on Home Screen
 
   @TestID-1234 @FeatureName
@@ -15,5 +15,5 @@ Feature: League, Team , Player and sub tab Navigation test
     Then Home screen is displayed
     Examples:
       | entity | type   | page title          | sub-tab    |
-      | TOR    | TEAM   | Toronto Maple Leafs | Team Stats |
+      | TOR    | TEAM   | Toronto Raptors | Team Stats |
       | NHL    | LEAGUE | NHL                 | Standings  |

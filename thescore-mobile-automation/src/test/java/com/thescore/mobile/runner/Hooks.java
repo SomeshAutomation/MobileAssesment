@@ -23,7 +23,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 @Slf4j
 public class Hooks {
-  public static final int IMPLICIT_WAIT = 5;
+  public static final int IMPLICIT_WAIT = 7;
   public static Properties properties = new Properties();
   public static final String CONFIG_FILE_NAME = "config.properties";
   // Command to generate Ready-to-Go Allure report

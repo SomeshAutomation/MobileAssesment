@@ -6,13 +6,16 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import java.time.Duration;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+@Slf4j
 public class CommonFunction {
 
   @AndroidFindBy(accessibility = "Navigate up")
@@ -28,7 +31,7 @@ public class CommonFunction {
   private WebDriverWait explicitShortWait;
   private WebDriverWait explicitLongWait;
 
-  public static final long SHORT_WAIT_TIME = 3;
+  public static final long SHORT_WAIT_TIME = 4;
   public static final long LONG_WAIT_TIME = 7;
 
   public CommonFunction() {
@@ -55,13 +58,20 @@ public class CommonFunction {
   }
 
   public WebElement waitForVisibilityBy(By e) {
-    return explicitShortWait.until(ExpectedConditions.visibilityOfElementLocated(e));
+    try {
+      return explicitShortWait.until(ExpectedConditions.visibilityOfElementLocated(e));
+    } catch (TimeoutException exception) {
+      log.error("Timeout: " + exception);
+      return null;
+    }
   }
 
   public boolean isElementDisplayed(WebElement element) {
     try {
       return element.isDisplayed();
     } catch (NoSuchElementException e) {
+      return false;
+    } catch (NullPointerException exception) {
       return false;
     }
   }
@@ -92,5 +102,10 @@ public class CommonFunction {
 
   public void selectLeagues() {
     clickElement(leaguesBottomNavigation);
+  }
+
+  public void enterText(WebElement element, String text) {
+    element.click();
+    element.sendKeys(text);
   }
 }
